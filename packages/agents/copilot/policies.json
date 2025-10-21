@@ -1,7 +1,7 @@
 {
   "quorum": {
-    "reviewerCount": 2,
-    "threshold": 0.8
+    "threshold": 0.85,
+    "reviewerCount": 2
   },
   "approvalMode": "agent-quorum",
   "auditIndex": "../../artifacts/index.jsonl"
