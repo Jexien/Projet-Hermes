@@ -1,0 +1,5 @@
+[
+  { "id": "lint", "level": "must" },
+  { "id": "unit-tests", "level": "must" },
+  { "id": "security-scan", "level": "must" }
+]

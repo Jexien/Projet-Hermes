@@ -1,0 +1,5 @@
+{
+  "agentId": "reviewer",
+  "role": "reviewer",
+  "threshold": 0.8
+}

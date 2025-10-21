@@ -1,0 +1,5 @@
+{
+  "agentId": "dev-frontend",
+  "role": "developer-frontend",
+  "stack": "nextjs,react,tailwind"
+}

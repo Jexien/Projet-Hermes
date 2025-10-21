@@ -1,0 +1,5 @@
+{
+  "agentId": "dev-backend",
+  "role": "developer-backend",
+  "stack": "nestjs,node,postgres"
+}

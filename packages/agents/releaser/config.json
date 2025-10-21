@@ -1,0 +1,5 @@
+{
+  "agentId": "releaser",
+  "role": "releaser",
+  "releaseStrategy": "local-tag"
+}

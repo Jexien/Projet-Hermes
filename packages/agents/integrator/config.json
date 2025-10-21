@@ -1,0 +1,5 @@
+{
+  "agentId": "integrator",
+  "role": "integrator",
+  "mergeStrategy": "rebase"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@hermes/agent-poc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}

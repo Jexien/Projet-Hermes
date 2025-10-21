@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PR Artifact",
+  "type": "object",
+  "required": ["id","authorAgent","baseBranch","targetBranch","filesChanged","timestamp"],
+  "properties": {
+    "id": { "type": "string" },
+    "authorAgent": { "type": "string" },
+    "baseBranch": { "type": "string" },
+    "targetBranch": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "filesChanged": { "type": "array", "items": { "type": "string" } },
+    "testsRun": { "type": "array", "items": { "type": "string" } },
+    "testReportHash": { "type": "string" },
+    "approvals": {
+      "type": "array",
+      "items": { "$ref": "./approval.schema.json" }
+    },
+    "hash": { "type": "string" },
+    "signedBy": { "type": "string" },
+    "metrics": { "type": "object", "additionalProperties": true },
+    "justification": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "metadata": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": false
+}

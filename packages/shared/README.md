@@ -1,0 +1,7 @@
+Packages partagés : schémas et utilitaires pour les agents.
+
+Contenu :
+- `schemas/` : JSON schemas décrivant les artefacts échangés entre agents (PRs, messages, design artifacts).
+
+Usage :
+Les agents doivent valider leurs artefacts contre ces schémas avant de publier dans `artifacts/queue/`.

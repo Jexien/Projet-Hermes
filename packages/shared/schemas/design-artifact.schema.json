@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Design Artifact",
+  "type": "object",
+  "required": ["id","authorAgent","assets","timestamp"],
+  "properties": {
+    "id": { "type": "string" },
+    "authorAgent": { "type": "string" },
+    "description": { "type": "string" },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path","format"],
+        "properties": {
+          "path": { "type": "string" },
+          "format": { "type": "string" },
+          "metadata": { "type": "object", "additionalProperties": true }
+        }
+      }
+    },
+    "tokens": { "type": "object", "additionalProperties": true },
+    "palette": { "type": "object", "additionalProperties": true },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
