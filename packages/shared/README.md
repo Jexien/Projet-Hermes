@@ -9,3 +9,6 @@ Les agents doivent valider leurs artefacts contre ces schémas avant de publier 
 
 ## Schema validation
 Run `npm install ajv` in this package and use `node validate.js <schema> <file>`
+
+## Indexer improvements
+Add verifyIntegrity and CLI tests. Use `node indexer.js` to index artifacts.
