@@ -1,0 +1,9 @@
+{
+  "id": "pr-example-0001",
+  "agentId": "copilot-agent",
+  "type": "pr",
+  "title": "Example PR for Copilot agent",
+  "description": "This is an example PR artifact used by the copilot agent PoC",
+  "files": [ { "path": "README.md", "change": "append", "content": "Example" } ],
+  "timestamp": "2025-10-22T00:00:00Z"
+}
