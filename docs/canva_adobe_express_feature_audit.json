@@ -1,0 +1,9 @@
+﻿{
+  "generatedBy": "copilot-assistant",
+  "date": "2025-10-25",
+  "features": [
+    { "id": "f01", "name": "Template editor (drag-drop)", "priority": "high", "short_desc": "Créer et éditer des templates", "estimate_days": 5, "dependencies": [] },
+    { "id": "f02", "name": "Image import & basic transform", "priority": "high", "short_desc": "Importer et transformer des images", "estimate_days": 3, "dependencies": ["f01"] },
+    { "id": "f03", "name": "Text editor with styles", "priority": "medium", "short_desc": "Edition et style du texte", "estimate_days": 2, "dependencies": ["f01"] }
+  ]
+}
