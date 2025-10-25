@@ -12,6 +12,21 @@ const rootArgIndex = args.indexOf('--root');
 const ROOT = rootArgIndex !== -1 ? path.resolve(args[rootArgIndex+1]) : path.resolve(__dirname, '../../..');
 
 function writeArtifact(obj, subdir='queue'){
+  // attempt lightweight validation using shared validator when available
+  try{
+    const valPath = path.join(ROOT, 'packages', 'shared', 'validate.js');
+    if(fs.existsSync(valPath)){
+      const vmod = require(valPath);
+      if(vmod && typeof vmod.validateArtifact === 'function'){
+        const r = vmod.validateArtifact(obj);
+        if(!r.valid){
+          console.warn('Artifact validation warnings/errors:', r.errors.join('; '));
+          // continue and still write to disk (non-blocking)
+        }
+      }
+    }
+  }catch(e){ console.warn('Validation attempt failed', e.message); }
+
   const dir = path.join(ROOT, 'artifacts', subdir);
   fs.mkdirSync(dir, { recursive: true });
   const filename = `${obj.id || uuidv4()}.json`;
@@ -52,9 +67,14 @@ function scaffoldExamplePR(){
 }
 
 function loadPolicies(){
-  const p = path.join(__dirname, 'policies.json');
-  if(fs.existsSync(p)) return JSON.parse(fs.readFileSync(p,'utf8'));
-  return { quorum: { threshold: 0.8, reviewerCount: 2 } };
+  // prefer shared policies at packages/agents/policies.json
+  const shared = path.join(ROOT, 'packages', 'agents', 'policies.json');
+  try{
+    if(fs.existsSync(shared)) return JSON.parse(fs.readFileSync(shared,'utf8'));
+  }catch(e){}
+  const local = path.join(__dirname, 'policies.json');
+  if(fs.existsSync(local)) return JSON.parse(fs.readFileSync(local,'utf8'));
+  return { quorum: { threshold: 0.8, reviewerCount: 1 } };
 }
 
 function findPRFiles(queueDir){

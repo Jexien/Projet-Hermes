@@ -1,0 +1,8 @@
+{
+  "id": "ci-3bbd702a-3ad6-4b2c-a9a6-d43bf9d8262f",
+  "agentId": "dev-frontend",
+  "type": "ci-report",
+  "name": "frontend-lint-build",
+  "success": false,
+  "timestamp": "2025-10-25T19:01:56.957Z"
+}

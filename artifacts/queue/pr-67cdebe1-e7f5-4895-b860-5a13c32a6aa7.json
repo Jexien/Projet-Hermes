@@ -1,0 +1,15 @@
+{
+  "id": "pr-67cdebe1-e7f5-4895-b860-5a13c32a6aa7",
+  "agentId": "copilot-agent",
+  "type": "pr",
+  "title": "PoC: agent proposed change",
+  "description": "Squelette de PR proposé par Copilot agent",
+  "files": [
+    {
+      "path": "README.md",
+      "change": "append",
+      "content": "Agent PoC"
+    }
+  ],
+  "timestamp": "2025-10-25T19:01:56.670Z"
+}
