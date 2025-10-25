@@ -1,0 +1,25 @@
+{
+  "name": "Projet-Hermes",
+  "owner": "Jexien",
+  "branch": "feature/agent-tester",
+  "description": "Machine-oriented metadata for agent orchestration",
+  "agentsRoot": "packages/agents",
+  "agents": [
+    { "id": "copilot", "commands": ["scaffold:example-pr","process:queue"], "artifactTypes": ["pr"] },
+    { "id": "planner", "commands": ["plan"], "artifactTypes": ["plan"] },
+    { "id": "tester", "commands": ["run"], "artifactTypes": ["test"] },
+    { "id": "reviewer", "commands": ["run"], "artifactTypes": ["review"] },
+    { "id": "integrator", "commands": ["process"], "artifactTypes": ["merged"] },
+    { "id": "designer", "commands": ["scaffold"], "artifactTypes": ["asset"] },
+    { "id": "dev-frontend", "commands": ["ci"], "artifactTypes": ["ci-report"] },
+    { "id": "dev-backend", "commands": ["ci"], "artifactTypes": ["ci-report"] },
+    { "id": "releaser", "commands": ["release"], "artifactTypes": ["release"] },
+    { "id": "ux", "commands": ["run"], "artifactTypes": ["ux-report"] }
+  ],
+  "artifactLocations": {
+    "queue": "artifacts/queue",
+    "merged": "artifacts/merged"
+  },
+  "policies": "packages/agents/policies.json",
+  "contract": "packages/agents/CONTRACT.md"
+}

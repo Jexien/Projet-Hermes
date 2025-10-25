@@ -1,0 +1,32 @@
+name: Smoke tests
+
+on:
+  push:
+    branches:
+      - feature/agent-machine-orientation
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  smoke-tests:
+    name: Run smoke-agents.ps1 (Windows)
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run smoke tests
+        shell: pwsh
+        run: |
+          Write-Host "Running smoke-agents.ps1"
+          pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\smoke-agents.ps1
+
+      - name: Verify artifacts produced
+        shell: pwsh
+        run: |
+          $queue = Join-Path $GITHUB_WORKSPACE 'artifacts\queue'
+          if (-Not (Test-Path $queue)) { Write-Error "artifacts/queue not found"; exit 1 }
+          $count = (Get-ChildItem -Path $queue -File -ErrorAction SilentlyContinue | Measure-Object).Count
+          Write-Host "Found $count artifacts in artifacts/queue"
+          if ($count -lt 1) { Write-Error "No artifacts created by smoke-tests"; exit 1 }

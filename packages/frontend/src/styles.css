@@ -1,0 +1,5 @@
+body{ font-family: system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0 }
+.app-header{ background:#0b5cff; color:white; padding:12px }
+.editor-root{ padding:16px }
+.toolbar{ margin-bottom:12px }
+.canvas-wrap{ display:flex; gap:12px }

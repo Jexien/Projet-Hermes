@@ -1,0 +1,9 @@
+{
+  "name": "project-hermes",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "gen:features": "node scripts/generate-feature-summary.js --write",
+    "gen:features:check": "node scripts/generate-feature-summary.js --check"
+  }
+}

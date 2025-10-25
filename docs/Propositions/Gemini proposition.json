@@ -1,0 +1,63 @@
+{
+  "generatedBy": "Gemini-assistant",
+  "date": "2025-10-25",
+  "notes": "Fusion et complétion des audits de fonctionnalités Canva & Adobe Express. Inclut les fonctionnalités de base, IA, vidéo, collaboration et écosystème.",
+  "features": [
+    // --- Section 1: Fonctionnalités de base (Vos fichiers) ---
+    { "id": "f01", "name": "Template editor (drag-drop)", "priority": "high", "short_desc": "Créer et éditer des templates avec images, texte et formes (glisser-déposer).", "estimate_days": 5, "dependencies": [] },
+    { "id": "f02", "name": "Image import & basic transform", "priority": "high", "short_desc": "Importer des images, recadrer, tourner, redimensionner et filtres basiques.", "estimate_days": 3, "dependencies": ["f01"] },
+    { "id": "f03", "name": "Text editor with styles", "priority": "medium", "short_desc": "Ajouter et styliser du texte (fonts, taille, couleur, alignement, effets simples).", "estimate_days": 2, "dependencies": ["f01"] },
+    { "id": "f04", "name": "Magic Studio / Firefly (IA suite)", "priority": "very_high", "short_desc": "Suite d'outils IA intégrée (génération, remplissages, brand voice)", "estimate_days": 10, "dependencies": ["b01"] },
+    { "id": "f05", "name": "Visual Suite (collaboration)", "priority": "high", "short_desc": "Espace projet unifié pour collaboration, commentaires et versioning", "estimate_days": 8, "dependencies": [] },
+    { "id": "f06", "name": "Firefly GenAI (core)", "priority": "very_high", "short_desc": "Text-to-image et generative fill avancés", "estimate_days": 7, "dependencies": ["f04"] },
+    { "id": "f07", "name": "Bulk Create & Resize/Localize", "priority": "very_high", "short_desc": "Génération de variantes en masse pour formats/langues", "estimate_days": 4, "dependencies": ["f01", "f13"] },
+    { "id": "f08", "name": "Add-ons Marketplace", "priority": "medium", "short_desc": "Extensions et plugins pour l'éditeur", "estimate_days": 6, "dependencies": ["p01"] },
+    { "id": "f09", "name": "Asset Manager (bibliothèque)", "priority": "high", "short_desc": "Gestion centralisée des assets, tagging et versions (Brand Hub)", "estimate_days": 5, "dependencies": [] },
+    { "id": "f10", "name": "Versioning & Comments", "priority": "high", "short_desc": "Historique version et revue de design (commentaires, curseurs temps-réel)", "estimate_days": 4, "dependencies": ["f05"] },
+    { "id": "f11", "name": "Multi-export & Publishing", "priority": "medium", "short_desc": "Export multi-format et publication multi-canal", "estimate_days": 3, "dependencies": ["f01","f02"] },
+    { "id": "f12", "name": "Clip Maker & Screen Recorder", "priority": "high", "short_desc": "Outils vidéo pour découper clips / enregistrement écran", "estimate_days": 5, "dependencies": ["f20"] },
+    { "id": "f13", "name": "Translate in Design", "priority": "medium", "short_desc": "Traduction automatique des textes dans les créations (IA)", "estimate_days": 3, "dependencies": ["f01", "f04"] },
+
+    // --- Section 2: Nouvelles Fonctionnalités (Manquantes) ---
+
+    // --- 2a. Cœur de l'Éditeur & Design ---
+    { "id": "f14", "name": "Background Remover (Image & Video)", "priority": "high", "short_desc": "Détourage automatique en un clic pour photos et vidéos.", "estimate_days": 4, "dependencies": ["f02", "f20", "b01"] },
+    { "id": "f15", "name": "Mockup Generator", "priority": "medium", "short_desc": "Appliquer des designs sur des maquettes de produits (t-shirts, tasses, écrans).", "estimate_days": 3, "dependencies": ["f01"] },
+    { "id": "f16", "name": "QR Code Generator", "priority": "low", "short_desc": "Générer et styliser des codes QR directement dans le design.", "estimate_days": 1, "dependencies": ["f01"] },
+    { "id": "f17", "name": "Vector Editing (Basic)", "priority": "medium", "short_desc": "Créer et modifier des formes vectorielles simples, importer SVG.", "estimate_days": 4, "dependencies": ["f01"] },
+    { "id": "f18", "name": "Charts & Data Visualization", "priority": "medium", "short_desc": "Créer des graphiques (barres, camemberts) liés à des données.", "estimate_days": 3, "dependencies": ["f01"] },
+    { "id": "f19", "name": "Advanced Text Effects", "priority": "medium", "short_desc": "Texte courbé, ombres, contours, effets néon, masques de texte.", "estimate_days": 3, "dependencies": ["f03"] },
+
+    // --- 2b. Édition Vidéo & Audio ---
+    { "id": "f20", "name": "Video Timeline Editor", "priority": "high", "short_desc": "Éditeur vidéo multi-pistes (timeline) pour scènes, transitions, audio.", "estimate_days": 8, "dependencies": ["f01"] },
+    { "id": "f21", "name": "Video Trimming & Merging", "priority": "high", "short_desc": "Outils rapides pour couper, fusionner, et réorganiser les clips.", "estimate_days": 3, "dependencies": ["f20"] },
+    { "id": "f22", "name": "Audio Editing & Library", "priority": "medium", "short_desc": "Ajouter/éditer pistes audio, musique stock, effets sonores, voix-off.", "estimate_days": 4, "dependencies": ["f20"] },
+    { "id": "f23", "name": "Auto-Captions (Video)", "priority": "medium", "short_desc": "Générer et styliser automatiquement des sous-titres pour les vidéos.", "estimate_days": 3, "dependencies": ["f20", "b01"] },
+    { "id": "f24", "name": "Video Speed Control", "priority": "low", "short_desc": "Ralentir ou accélérer la vitesse des clips vidéo.", "estimate_days": 1, "dependencies": ["f20"] },
+    { "id": "f25", "name": "Animate Elements", "priority": "medium", "short_desc": "Animations d'entrée/sortie/emphase pour tout élément (texte, image).", "estimate_days": 3, "dependencies": ["f01"] },
+    
+    // --- 2c. Suite IA (Magic Studio / Firefly) ---
+    { "id": "f30", "name": "AI Text-to-Video", "priority": "very_high", "short_desc": "Générer des scènes vidéo à partir d'un prompt texte (Magic Media / Firefly).", "estimate_days": 6, "dependencies": ["f04", "f20"] },
+    { "id": "f31", "name": "AI Magic Eraser", "priority": "high", "short_desc": "Effacer des objets ou personnes d'une photo.", "estimate_days": 3, "dependencies": ["f04", "f02"] },
+    { "id": "f32", "name": "AI Magic Grab / Grab Text", "priority": "medium", "short_desc": "Rendre n'importe quel objet ou texte dans une image non-éditable 'attrapable' et modifiable.", "estimate_days": 4, "dependencies": ["f04"] },
+    { "id": "f33", "name": "AI Magic Morph", "priority": "medium", "short_desc": "Transformer la texture ou la forme d'un objet/texte via un prompt (ex: 'Rendre en ballon').", "estimate_days": 3, "dependencies": ["f04"] },
+    { "id": "f34", "name": "AI Magic Animate", "priority": "medium", "short_desc": "Appliquer automatiquement des animations cohérentes à l'ensemble d'un design.", "estimate_days": 3, "dependencies": ["f04", "f25"] },
+    { "id": "f35", "name": "AI Voice Enhance", "priority": "medium", "short_desc": "Nettoyer et améliorer la qualité des enregistrements vocaux (supprimer bruit de fond).", "estimate_days": 2, "dependencies": ["f04", "f22"] },
+    { "id": "f36", "name": "AI Beat Sync", "priority": "low", "short_desc": "Synchroniser automatiquement les transitions vidéo sur le rythme d'une piste audio.", "estimate_days": 2, "dependencies": ["f04", "f20"] },
+    { "id": "f37", "name": "AI Text Effects (GenAI)", "priority": "medium", "short_desc": "Appliquer des textures et styles complexes au texte via un prompt (ex: 'Texte en fourrure rose').", "estimate_days": 3, "dependencies": ["f04", "f03"] },
+    { "id": "f38", "name": "AI Animate from Audio", "priority": "medium", "short_desc": "Animer un personnage (avatar) en utilisant un enregistrement audio (Adobe).", "estimate_days": 4, "dependencies": ["f04", "f22"] },
+
+    // --- 2d. Collaboration & Écosystème ---
+    { "id": "f40", "name": "Brand Kit / Hub", "priority": "high", "short_desc": "Gérer logos, palettes de couleurs, polices et voix de marque (IA) pour l'équipe.", "estimate_days": 5, "dependencies": ["f05", "f09"] },
+    { "id": "f41", "name": "Content Planner & Scheduler", "priority": "medium", "short_desc": "Calendrier pour planifier et publier automatiquement sur les réseaux sociaux.", "estimate_days": 4, "dependencies": ["f11"] },
+    { "id": "f42", "name": "Real-time Cursors & Editing", "priority": "high", "short_desc": "Voir les curseurs des co-équipiers et éditer à plusieurs en temps réel.", "estimate_days": 4, "dependencies": ["f05"] },
+    { "id": "f43", "name": "Whiteboards", "priority": "medium", "short_desc": "Tableau blanc infini pour brainstorming avec post-its, diagrammes, timer.", "estimate_days": 5, "dependencies": ["f05"] },
+    { "id": "f44", "name": "Adobe PS/AI/ID Import", "priority": "low", "short_desc": "Importer et éditer (de manière limitée) des fichiers Photoshop, Illustrator, InDesign.", "estimate_days": 5, "dependencies": ["f01"] },
+    { "id": "f45", "name": "Canva Docs", "priority": "low", "short_desc": "Éditeur de documents texte (type GDocs) intégré aux designs.", "estimate_days": 4, "dependencies": ["f01"] },
+    { "id": "f46", "name": "Website Builder (Basic)", "priority": "low", "short_desc": "Publier un design en tant que site web simple (one-page).", "estimate_days": 3, "dependencies": ["f11"] },
+    
+    // --- 2e. Dépendances techniques (Invisibles pour l'utilisateur) ---
+    { "id": "b01", "name": "Backend AI/Processing", "priority": "critical", "short_desc": "Infrastructure backend pour gérer les appels GenAI, le rendu vidéo lourd, et le processing.", "estimate_days": 20, "dependencies": [] },
+    { "id": "p01", "name": "Platform API/SDK", "priority": "medium", "short_desc": "API pour permettre le développement d'add-ons (f08) et d'intégrations externes.", "estimate_days": 15, "dependencies": [] }
+  ]
+}

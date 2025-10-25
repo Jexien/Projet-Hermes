@@ -1,0 +1,16 @@
+{
+  "id": "T108",
+  "title": "Undo/Redo & history",
+  "description": "Implement action history with undo/redo and snapshotting of project state.",
+  "steps_for_ai": [
+    "Implement command pattern or state-diff history in frontend state",
+    "Persist periodic snapshots to storage/projects/ as restore points",
+    "Add UI controls for undo/redo and snapshot restore",
+    "Add tests for undo/redo correctness"
+  ],
+  "deps": [],
+  "estimate_days": 3,
+  "acceptance_criteria": ["undo last action","redo works","restore snapshot"],
+  "suggested_branch": "feat/undo-redo-history",
+  "pr_title": "feat(frontend): undo/redo + project snapshots"
+}

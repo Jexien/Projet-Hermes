@@ -1,0 +1,16 @@
+{
+  "id": "T101",
+  "title": "Implement templates gallery",
+  "description": "Add templates browser, define template JSON format, implement apply-template flow to populate project.json, and UI to open/apply templates.",
+  "steps_for_ai": [
+    "Create templates folder: packages/frontend/src/templates/ with sample template JSON and assets",
+    "Add UI component TemplateBrowser that lists templates and shows preview",
+    "Implement applyTemplate(templateId) to merge template into current project state and persist to storage/projects/*.json",
+    "Add unit tests for template JSON parsing and apply logic"
+  ],
+  "deps": [],
+  "estimate_days": 3,
+  "acceptance_criteria": ["open template from gallery","replace text/image placeholders","save applied template as project.json"],
+  "suggested_branch": "feat/templates-gallery",
+  "pr_title": "feat(frontend): templates gallery + apply-template"
+}

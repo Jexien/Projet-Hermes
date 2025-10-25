@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2025-10-25T00:00:00Z",
+  "agents": {
+    "copilot": { "path": "packages/agents/copilot/index.js", "commands": ["scaffold:example-pr","process:queue"] },
+    "planner": { "path": "packages/agents/planner/index.js", "commands": ["plan"] },
+    "tester": { "path": "packages/agents/tester/index.js", "commands": ["run"] },
+    "reviewer": { "path": "packages/agents/reviewer/index.js", "commands": ["run"] },
+    "integrator": { "path": "packages/agents/integrator/index.js", "commands": ["process"] },
+    "designer": { "path": "packages/agents/designer/index.js", "commands": ["scaffold"] },
+    "dev-frontend": { "path": "packages/agents/dev-frontend/index.js", "commands": ["ci"] },
+    "dev-backend": { "path": "packages/agents/dev-backend/index.js", "commands": ["ci"] },
+    "releaser": { "path": "packages/agents/releaser/index.js", "commands": ["release"] },
+    "ux": { "path": "packages/agents/ux/index.js", "commands": ["run"] }
+  }
+}

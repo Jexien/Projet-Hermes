@@ -1,0 +1,16 @@
+{
+  "id": "T104",
+  "title": "Image import & basic transforms",
+  "description": "Implement image import (PNG/JPG) and basic transforms: crop, rotate, resize. Keep original binary in layer src.",
+  "steps_for_ai": [
+    "Enhance Editor file input to accept multiple formats and maintain binary src in layer",
+    "Implement cropping UI with handles and rotation control",
+    "Add resize control with quality options",
+    "Add automated tests for import and transform pipeline"
+  ],
+  "deps": [],
+  "estimate_days": 3,
+  "acceptance_criteria": ["import PNG/JPG","perform crop and rotate","export reflects transforms"],
+  "suggested_branch": "feat/image-import-transforms",
+  "pr_title": "feat(frontend): image import and basic transforms"
+}

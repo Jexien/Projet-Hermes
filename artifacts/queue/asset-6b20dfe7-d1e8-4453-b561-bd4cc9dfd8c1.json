@@ -1,0 +1,11 @@
+{
+  "id": "asset-6b20dfe7-d1e8-4453-b561-bd4cc9dfd8c1",
+  "agentId": "designer",
+  "type": "asset",
+  "title": "example-asset",
+  "metadata": {
+    "format": "png",
+    "size": 1024
+  },
+  "timestamp": "2025-10-25T18:49:06.286Z"
+}

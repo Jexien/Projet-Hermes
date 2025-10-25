@@ -1,0 +1,13 @@
+{
+  "id": "plan-8499c4ec-8a98-4674-bbf3-7a70dab87725",
+  "agentId": "planner",
+  "type": "plan",
+  "tasks": [
+    {
+      "package": "agent-poc",
+      "task": "review-package",
+      "priority": "P1"
+    }
+  ],
+  "timestamp": "2025-10-25T18:46:55.624Z"
+}

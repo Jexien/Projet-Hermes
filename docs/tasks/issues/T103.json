@@ -1,0 +1,16 @@
+{
+  "id": "T103",
+  "title": "Text tool (rich)",
+  "description": "Add text elements with font selection, size, color, alignment and basic styles. Support editing in-canvas and in-sidepanel.",
+  "steps_for_ai": [
+    "Create TextLayer type and UI to add/edit text",
+    "Integrate webfont loading and font picker UI",
+    "Ensure text renders to canvas and exports correctly",
+    "Add tests for text persistence and export"
+  ],
+  "deps": [],
+  "estimate_days": 3,
+  "acceptance_criteria": ["add text element","change font and size","export contains rendered text"],
+  "suggested_branch": "feat/text-tool",
+  "pr_title": "feat(frontend): text tool (font, size, color)"
+}
