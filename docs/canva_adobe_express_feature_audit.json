@@ -1,19 +1,15 @@
-﻿{
-  "generatedBy": "copilot-assistant",
-  "date": "2025-10-25",
+{
+  "generated_at": "2025-10-25T21:51:38.472Z",
   "features": [
-    { "id": "f01", "name": "Template editor (drag-drop)", "priority": "high", "short_desc": "Créer et éditer des templates", "estimate_days": 5, "dependencies": [] },
-    { "id": "f02", "name": "Image import & basic transform", "priority": "high", "short_desc": "Importer et transformer des images", "estimate_days": 3, "dependencies": ["f01"] },
-    { "id": "f03", "name": "Text editor with styles", "priority": "medium", "short_desc": "Edition et style du texte", "estimate_days": 2, "dependencies": ["f01"] },
-    { "id": "f04", "name": "Magic Studio (IA suite)", "priority": "very_high", "short_desc": "Suite d'outils IA intégrée (génération, remplissages, brand voice)", "estimate_days": 10, "dependencies": [] },
-    { "id": "f05", "name": "Visual Suite 2.0 (collaboration)", "priority": "high", "short_desc": "Espace projet unifié pour collaboration, commentaires et versioning", "estimate_days": 8, "dependencies": [] },
-    { "id": "f06", "name": "Firefly GenAI", "priority": "very_high", "short_desc": "Text-to-image et generative fill avancés", "estimate_days": 7, "dependencies": ["f04"] },
-    { "id": "f07", "name": "Bulk Create & Resize/Localize", "priority": "very_high", "short_desc": "Génération de variantes en masse pour formats/langues", "estimate_days": 4, "dependencies": ["f01"] },
-    { "id": "f08", "name": "Add-ons Marketplace", "priority": "medium", "short_desc": "Extensions et plugins pour l'éditeur", "estimate_days": 6, "dependencies": [] },
-    { "id": "f09", "name": "Asset Manager (bibliothèque)", "priority": "high", "short_desc": "Gestion centralisée des assets, tagging et versions", "estimate_days": 5, "dependencies": [] },
-    { "id": "f10", "name": "Versioning & Comments", "priority": "high", "short_desc": "Historique version et revue de design", "estimate_days": 4, "dependencies": ["f05"] },
-    { "id": "f11", "name": "Multi-export & Publishing", "priority": "medium", "short_desc": "Export multi-format et publication multi-canal", "estimate_days": 3, "dependencies": ["f01","f02"] },
-    { "id": "f12", "name": "Clip Maker & Screen Recorder", "priority": "high", "short_desc": "Outils vidéo pour découper et générer clips / enregistrement écran", "estimate_days": 5, "dependencies": [] },
-    { "id": "f13", "name": "Translate in Design", "priority": "medium", "short_desc": "Traduction automatique des textes dans les créations", "estimate_days": 3, "dependencies": ["f01"] }
+    {
+      "id": "f01",
+      "name": "Template editor (drag-drop)",
+      "priority": "high",
+      "short_description": "",
+      "estimate_days": null,
+      "deps": [],
+      "missing": false,
+      "tags": []
+    }
   ]
 }
