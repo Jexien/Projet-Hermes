@@ -1,0 +1,80 @@
+{
+  "generated_at": "2025-10-25T00:00:00Z",
+  "note": "High-priority features from canva_adobe_express_feature_audit.json transformed into actionable tasks for the IA",
+  "tasks": [
+    {
+      "id": "T101",
+      "feature_ref": "F001",
+      "title": "Implement templates gallery",
+      "description": "Add templates browser, template JSON format, apply template into project.json and create UI to open/apply templates.",
+      "inputs": [],
+      "outputs": ["templates/*.json","UI template browser"],
+      "deps": [],
+      "estimate_days": 3,
+      "acceptance_criteria": ["open template","replace text/image placeholders","save as project"]
+    },
+    {
+      "id": "T102",
+      "feature_ref": "F002",
+      "title": "Drag-and-drop composition",
+      "description": "Implement drag-and-drop support for canvas elements and maintain layer list in project.json.",
+      "deps": ["T101"],
+      "estimate_days": 4,
+      "acceptance_criteria": ["drop image on canvas","position persists","undo/redo works"]
+    },
+    {
+      "id": "T103",
+      "feature_ref": "F003",
+      "title": "Text tool (rich)",
+      "description": "Add text elements support with font selection, size, color and basic styles.",
+      "deps": [],
+      "estimate_days": 3,
+      "acceptance_criteria": ["add text","change font","export shows text"]
+    },
+    {
+      "id": "T104",
+      "feature_ref": "F004",
+      "title": "Image import & basic transforms",
+      "description": "Implement image import (PNG/JPG) and basic transforms: crop, rotate, resize.",
+      "deps": [],
+      "estimate_days": 3,
+      "acceptance_criteria": ["import 3 formats","crop works","export contains changes"]
+    },
+    {
+      "id": "T105",
+      "feature_ref": "F005",
+      "title": "Export PNG/JPG/PDF",
+      "description": "Export composition to PNG/JPG (client-side) and PDF (fallback via server-side if needed).",
+      "deps": ["T104","T103"],
+      "estimate_days": 2,
+      "acceptance_criteria": ["exported file opens","dimensions correct"]
+    },
+    {
+      "id": "T106",
+      "feature_ref": "F006",
+      "title": "Layers panel",
+      "description": "Implement layers list management (reorder, visibility, lock) synced with project.json.",
+      "deps": ["T102"],
+      "estimate_days": 3,
+      "acceptance_criteria": ["reorder persists","toggle visibility"]
+    },
+    {
+      "id": "T107",
+      "feature_ref": "F008",
+      "title": "Elements & assets library",
+      "description": "Create local assets library with categories and search; insertion into canvas.",
+      "deps": [],
+      "estimate_days": 4,
+      "acceptance_criteria": ["browse assets","insert asset into canvas"]
+    },
+    {
+      "id": "T108",
+      "feature_ref": "F020",
+      "title": "Undo/Redo & history",
+      "description": "Implement action history with undo/redo and snapshotting.",
+      "deps": [],
+      "estimate_days": 3,
+      "acceptance_criteria": ["undo last action","redo works"]
+    }
+  ]
+}

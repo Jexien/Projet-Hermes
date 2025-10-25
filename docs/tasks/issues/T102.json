@@ -1,0 +1,16 @@
+{
+  "id": "T102",
+  "title": "Drag-and-drop composition",
+  "description": "Implement drag-and-drop support for canvas elements and maintain layer list in project.json. Include reordering and basic positioning.",
+  "steps_for_ai": [
+    "Add Layer model in frontend state and persist in project.json",
+    "Implement drag-drop using React DnD or HTML5 events for images/text/shapes",
+    "Sync positions and z-index to layers array",
+    "Add undo/redo hooks for position changes"
+  ],
+  "deps": ["T101"],
+  "estimate_days": 4,
+  "acceptance_criteria": ["drop image on canvas","position persists after reload","undo/redo works for moves"],
+  "suggested_branch": "feat/drag-drop-composition",
+  "pr_title": "feat(frontend): drag-and-drop composition + layers state"
+}

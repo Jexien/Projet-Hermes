@@ -1,0 +1,16 @@
+{
+  "id": "T105",
+  "title": "Export PNG/JPG/PDF",
+  "description": "Export composition to PNG/JPG client-side; provide PDF export (client or server fallback).",
+  "steps_for_ai": [
+    "Implement canvas export toBlob and save to filesystem via download link",
+    "Provide export settings UI (dimensions, quality)",
+    "Add server-side export adapter placeholder if client fails for PDFs",
+    "Add tests validating exported file format and dimensions"
+  ],
+  "deps": ["T104","T103"],
+  "estimate_days": 2,
+  "acceptance_criteria": ["exported PNG opens","dimensions correct","PDF export possible via fallback"],
+  "suggested_branch": "feat/export",
+  "pr_title": "feat(frontend): export PNG/JPG (+ PDF fallback)"
+}
