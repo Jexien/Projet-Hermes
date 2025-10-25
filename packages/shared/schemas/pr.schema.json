@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PR artifact",
+  "type": "object",
+  "required": ["id","agentId","type","title","timestamp","files"],
+  "properties": {
+    "id": { "type": "string" },
+    "agentId": { "type": "string" },
+    "type": { "const": "pr" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path","change"],
+        "properties": {
+          "path": { "type": "string" },
+          "change": { "enum": ["append","modify","delete"] },
+          "content": { "type": "string" }
+        }
+      }
+    },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": true
+}
