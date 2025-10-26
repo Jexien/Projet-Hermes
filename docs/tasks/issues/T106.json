@@ -1,0 +1,16 @@
+{
+  "id": "T106",
+  "title": "Layers panel",
+  "description": "Implement layers list management (reorder, visibility, lock) synced with project.json and UI to manage layers.",
+  "steps_for_ai": [
+    "Create LayersPanel component showing list of layers",
+    "Implement reorder (drag) and toggle visibility/lock",
+    "Persist layer order and properties to project.json",
+    "Add tests for reorder and visibility toggles"
+  ],
+  "deps": ["T102"],
+  "estimate_days": 3,
+  "acceptance_criteria": ["reorder persists","toggle visibility persists"],
+  "suggested_branch": "feat/layers-panel",
+  "pr_title": "feat(frontend): layers panel (reorder, visibility)"
+}

@@ -5,14 +5,12 @@
 - Vision produit *Keep It Simple* : n'introduire un module que lorsqu'une fonctionnalité validée l'exige et garder les couches découplées.
 - Architecture visée en couches nettes (interfaces, application, domaine, infrastructure) pour respecter la *Separation of Concerns* (SOC) et la *Law of Demeter* (LOD).
 
-## Pile technologique cible (2025-10)
-- Voir `docs/stack-technique.md` pour les détails complets et la roadmap outillage.
-- **Frontend** : Next.js 14 (App Router) + React + TypeScript, gestion d'état via Zustand/TanStack Query, Storybook + Tailwind CSS pour le design system.
-- **Canvas & rendu** : Paper.js / Konva pour le vectoriel, WebGL/WASM (regl/PixiJS) pour le raster, Three.js + WebGPU (feature flags) pour la 3D.
-- **Backend** : NestJS (Node.js 20 + TypeScript), architecture modulaire, REST + GraphQL, WebSocket pour collaboration temps réel.
-- **Persistance & temps réel** : PostgreSQL (relationnel), Redis (sessions/pub-sub), Meilisearch (index léger), BullMQ sur Redis (jobs export/worker). Evolution possible vers services Go/Rust pour les workloads lourds.
-- **Infra locale** : pnpm monorepo (`apps/web`, `apps/api`, `packages/shared`), Docker Compose pour services (Postgres, Redis, Meilisearch), GitHub Actions pour CI.
-- **Qualité** : ESLint + Prettier, Vitest (mono repo) + Playwright E2E, Trivy & npm audit pour la sécurité.
+## Pile technologique (note de statut)
+
+La description détaillée de la pile technique a évolué : une version allégée "local-first" a été adoptée le 2025-10-24.
+Pour la définition actuelle et la roadmap d'évolution, les documents humains ont été archivés dans `archive/docs_human/docs/` ; la source machine‑canonique reste `.github/copilot-instructions.md`.
+
+La spécification plus ambitieuse (Next.js / NestJS / Postgres / Redis / Meilisearch / BullMQ, etc.) est conservée à titre documentaire dans l'historique, mais n'est pas l'orientation recommandée pour le PoC initial (voir ADR `archive/docs_human/docs/adr/0001-simplify-stack.md`).
 
 ## Concepts structurants
 - **Separation of Concerns (SOC)** : chaque couche ne traite qu'une responsabilité (ex. application orchestre, domaine porte la logique, infrastructure gère les adaptateurs). Aucun débordement de responsabilités entre couches.
@@ -24,7 +22,7 @@
 ## Structure attendue
 - `src/` : logique métier encapsulée dans des services courts et testables ; éviter les appels en chaîne (LOD).
 - `tests/` : mirroir de `src/` avec scénarios nominaux + contre-exemples ; privilégier les tests rapides en ligne de commande.
-- `docs/` : décisions d'architecture (ADR), maquettes, guides d'onboarding.
+-- `docs/` : (remplacé) les documents humains ont été archivés sous `archive/docs_human/docs/`.
 - `CHANGELOG.md` : consigner chaque itération avec la nomenclature fournie (version, date, catégories, dépendances vérifiées).
 
 ## Workflows critiques (build/test/debug)
@@ -37,7 +35,7 @@
 - Toujours factoriser les responsabilités partagées dans des utilitaires réutilisables (DRY) et documenter le point d'entrée.
 - Préférer les DTO/ports explicites entre couches plutôt que des objets partagés implicites.
 - Toute dépendance réseau ou système doit passer par une interface décrite dans `src/infrastructure/`.
-- Documenter les décisions architecturales majeures dans `docs/adr/XXXX-titre.md` (numérotation séquentielle).
+-- Documenter les décisions architecturales majeures dans `archive/docs_human/docs/adr/XXXX-titre.md` (numérotation séquentielle) pour l'historique; inscrire toute décision machine‑canonique dans `.github/copilot-instructions.md`.
 - Absence d'API accessible ⇒ implémenter une solution maison (sources open data acceptées, pas de partenariats externes implicites).
 - Usage d'API tierce uniquement si elle apporte un gain majeur de praticité **et** si sa licence autorise explicitement la commercialisation du logiciel.
 - Décision 2025-10-03 : suspendre tout développement d'IA maison tant qu'aucune ressource GPU dédiée n'est provisionnée ou qu'un réseau décentralisé d'au moins 500 volontaires n'est pas opérationnel. Les tâches restent documentées mais ne doivent pas être lancées avant validation.
@@ -51,6 +49,16 @@
 	- Quels sont les points forts de ce travail ?
 	- Quels sont les points faibles identifiés ?
 	- Quelles améliorations puis-je proposer ?
+
+## Rôles : "cerveau" vs documentation humaine
+
+Pour éviter les contradictions et la duplication d'information, on applique la règle suivante :
+- `.github/copilot-instructions.md` est le "cerveau" — source de vérité opérationnelle pour les agents (policies, formats d'artefacts, scripts d'exécution, seuils, chemins attendus). Les agents doivent s'appuyer prioritairement sur ce fichier et sur les schémas machine‑readables (ex : `packages/shared/schemas/`).
+-- Les documents humains ont été archivés sous `archive/docs_human/docs/` : synthèse, roadmap, guides d'onboarding et documentation approfondie sont disponibles dans l'archive pour consultation historique.
+
+Politique pratique : toute modification ayant un impact sur le comportement des agents (formats d'artefacts, schémas, chemins, politiques d'approbation) doit être consignée dans `.github/copilot-instructions.md`. Les documents humains de contexte ont été archivés dans `archive/docs_human/docs/` pour historique et récupération.
+
+But : garder un "cerveau" machine‑readable fiable tout en offrant une vue synthétique et accessible aux humains.
 	# Copilot-instructions — cerveau central du projet Hermes
 
 	Ce fichier est la source de vérité opérationnelle destinée aux agents (Copilot inclus) et aux contributeurs : il définit la manière dont le "cerveau" du projet orchestre les composants de plus bas niveau (agents, schémas, artefacts, scripts). Toute opération automatisée doit pouvoir se référer à ce document pour connaître les responsabilités, les contrats JSON et les points d'extension.

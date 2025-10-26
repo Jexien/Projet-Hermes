@@ -1,0 +1,16 @@
+{
+  "id": "T107",
+  "title": "Elements & assets library",
+  "description": "Create local assets library with categories and search; enable insertion into canvas.",
+  "steps_for_ai": [
+    "Create assets storage at storage/assets/ and simple JSON catalog",
+    "Implement AssetsBrowser UI with categories and search",
+    "Add insert action to add selected asset to canvas as a layer",
+    "Add unit tests for catalog parsing and insert action"
+  ],
+  "deps": [],
+  "estimate_days": 4,
+  "acceptance_criteria": ["browse assets","insert asset into canvas"],
+  "suggested_branch": "feat/assets-library",
+  "pr_title": "feat(frontend): assets library + asset insertion"
+}

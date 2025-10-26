@@ -1,0 +1,15 @@
+{
+  "generated_at": "2025-10-26T13:59:53.986Z",
+  "features": [
+    {
+      "id": "f01",
+      "name": "Template editor (drag-drop)",
+      "priority": "high",
+      "short_description": "",
+      "estimate_days": null,
+      "deps": [],
+      "missing": false,
+      "tags": []
+    }
+  ]
+}

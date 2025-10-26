@@ -1,0 +1,8 @@
+{
+  "id": "ci-f0073181-e405-4ee6-8393-329de8e858d0",
+  "agentId": "dev-backend",
+  "type": "ci-report",
+  "name": "backend-smoke",
+  "success": false,
+  "timestamp": "2025-10-25T18:49:13.531Z"
+}
